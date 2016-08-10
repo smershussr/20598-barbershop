@@ -1,0 +1,29 @@
+body {
+  font-size: 14px;
+  font-family: "PT Sans Narrow Bold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #000000;
+}
+
+.index-content-title,
+.page-title {
+  font-size: 30px;
+  line-height: 42px;
+  text-transform: uppercase;
+}
+
+.filters-title,
+.list-title {
+  font-size: 24px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.products-item-title {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.products-item-title .products-manufacturer {
+  text-transform: uppercase;
+}
