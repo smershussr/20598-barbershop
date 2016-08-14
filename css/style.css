@@ -1,5 +1,4 @@
-html,
-body {
+:root { /* Возвращает корневой элемент - html*/
   min-width: 1122px;
   margin: 0;
   padding: 0;
