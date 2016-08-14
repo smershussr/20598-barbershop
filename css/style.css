@@ -22,69 +22,27 @@
   padding: 0 10px;
 }
 
-.main-header {
+/*.main-header {
   margin-bottom: 60px;
-}
+}*/
 
 .main-navigation {
   float: left;
-  width: 780px;
+  width: 780px; /* Временно для визуализации, пока не заданы стили контенту этого блока */
   min-height: 70px;
 }
 
 .user-block {
   float: right;
-  width: 140px;
+  width: 140px; /* Временно для визуализации, пока не заданы стили контенту этого блока */
   min-height: 70px;
 }
 
-/******* ГЛАВНАЯ *******/
-
-.index-logo {
-  width: 368px;
-  min-height: 204px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 25px;
-}
-
-.features {
-  margin-bottom: 80px;
-}
-
-.features-item {
-  float: left;
-  width: 300px;
-  min-height: 175px;
-  margin-right: 20px;
-}
-
-.features-item:last-child {
-  margin-right: 0;
-}
-
-.index-content {
-  margin-bottom: 35px;
-  padding: 50px 80px;
-}
-
-.index-content:last-child {
-    margin-bottom: 65px;
-}
-
-.index-content-left {
-  float: left;
-  width: 380px;
-  min-height: 330px;
-}
-
-.index-content-right {
-  float: right;
-  width: 300px;
-  min-height: 330px;
-}
-
 /******* КАТАЛОГ *******/
+main.container {
+  margin-top: 60px;
+}
+
 .page-title {
   min-height: 25px;
   margin-bottom: 25px;
@@ -198,6 +156,7 @@
 
 
 .main-footer {
+  margin-top: 45px;
   padding-top: 60px;
   padding-bottom: 40px;
 }
