@@ -28,13 +28,11 @@
 
 .main-navigation {
   float: left;
-  width: 780px; /* Временно для визуализации, пока не заданы стили контенту этого блока */
   min-height: 70px;
 }
 
 .user-block {
   float: right;
-  width: 140px; /* Временно для визуализации, пока не заданы стили контенту этого блока */
   min-height: 70px;
 }
 
