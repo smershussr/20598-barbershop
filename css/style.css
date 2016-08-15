@@ -99,14 +99,14 @@ main.container {
   margin-bottom: 20px;
 }
 
-.gallery img {
+.gallery a {
+  float: left;
   width: 140px;
   min-height: 149px;
   margin-right: 20px;
 }
 
-.gallery img:last-child {
-  width: 132px;
+.gallery a:last-child {
   margin-right: 0;
 }
 
@@ -149,9 +149,6 @@ main.container {
 .consist {
   min-height: 170px;
 }
-
-
-
 
 .main-footer {
   margin-top: 45px;
@@ -206,7 +203,6 @@ body > * > * > * > * {
 /*********** ВСПОМОГАТЕЛЬНЫЕ СТИЛИ ДЛЯ ПОДСВЕТКИ БЛОКОВ **********/
 
 /***************************** ЗАГОЛОВКИ *****************************/
-
 
 .index-content-title,
 .page-title {
