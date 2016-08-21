@@ -1,14 +1,15 @@
 :root { /* Возвращает корневой элемент - html*/
-  min-width: 1122px;
+  min-width: 960px;
   margin: 0;
   padding: 0;
   font-size: 14px;
-  font-family: "PT Sans Narrow Bold", "Arial", "Helvetica", sans-serif;
+  line-height: 24px;
+  font-family: "PT Sans Narrow", "Arial", "Helvetica", sans-serif;
   font-weight: bold;
   color: #000000;
+  background: #ffffff url("../img/bg-main.png") repeat 0 0;
+  text-transform: uppercase;
 }
-
-/***************************** СЕТКИ СТРАНИЦ *****************************/
 
 .clearfix::after {
   content: "";
@@ -22,34 +23,130 @@
   padding: 0 10px;
 }
 
-/*.main-header {
-  margin-bottom: 60px;
-}*/
+/***************************** ХЕДЕР *****************************/
+
+.main-header {
+  margin-bottom: 52px;
+  color: #ffffff;
+  background-color: #000000;
+}
 
 .main-navigation {
   float: left;
-  min-height: 70px;
+}
+
+.main-navigation img {
+  width: 111px;
+  height: 24px;
+}
+
+.main-navigation a {
+  float: left;
+  padding: 25px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.main-navigation a:first-child {
+  padding: 20px;
+}
+
+.main-navigation a:nth-child(n+2):hover {
+  background: #242424;
+}
+
+.main-navigation .active-page {
+  position: relative;
+}
+
+.main-navigation .active-page::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 56px;
+  height: 4px;
+  background-color: #ffffff;
 }
 
 .user-block {
   float: right;
-  min-height: 70px;
+  max-width: 140px;
 }
 
-/******* КАТАЛОГ *******/
-main.container {
-  margin-top: 60px;
+.login {
+  position: relative;
+  display: block;
+  padding: 25px 20px;
+  padding-left: 50px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  text-decoration: none;
 }
+
+.login:hover {
+  background-color: #242424;
+}
+
+.login::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 20px;
+  width: 18px;
+  height: 18px;
+  background: transparent url("../img/sprite.png") no-repeat -1px -15px;
+  opacity: 0.3;
+}
+
+.login:hover::before {
+  opacity: 1;
+}
+
+/***************************** КОНТЕНТ *****************************/
 
 .page-title {
-  min-height: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+  font-size: 30px;
+  line-height: 42px;
 }
 
 .breadcrumbs {
-  min-height: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 58px;
 }
+
+.breadcrumbs a {
+  position:relative;
+  margin-right: 17px;
+  padding-right: 28px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.breadcrumbs a::after,
+.list-items li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  transform: rotate(45deg);
+  background-color: #000000;
+  box-shadow: inset 0 0 1px 1px #636260;
+}
+
+.breadcrumbs .breadcrumbs-active {
+  color: #aba9a7;
+}
+
+/******* КАТАЛОГ ТОВАРОВ *******/
 
 .catalog,
 .catalog-item {
@@ -58,8 +155,114 @@ main.container {
 
 .catalog-filters {
   float: left;
+  margin: 0;
+  padding: 0;
   width: 220px;
-  min-height: 570px;
+}
+
+.filters-item {
+  margin-bottom: 33px;
+}
+
+.filters-title,
+.list-title {
+  margin-bottom: 30px;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  position: relative;
+  display: block;
+  max-width: 130px;
+  margin-bottom: 17px;
+  padding-left: 45px;
+  font-size: 14px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label::before,
+input[type="radio"] + label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000000;
+  background-color: #f9f6f3;
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: transparent url("../img/sprite.png") no-repeat 0 -59px;
+}
+
+input[type="radio"] + label::before {
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:not(:disabled) + label:active,
+input[type="checkbox"]:not(:disabled) + label:hover,
+input[type="radio"]:not(:disabled) + label:active,
+input[type="radio"]:not(:disabled) + label:hover {
+  color: #663d15;
+}
+
+input[type="checkbox"]:disabled + label,
+input[type="checkbox"]:disabled + label::before,
+input[type="checkbox"]:disabled + label::after,
+input[type="radio"]:disabled + label,
+input[type="radio"]:disabled + label::before,
+input[type="radio"]:disabled + label::after {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.btn {
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "PT Sans Narrow", "Arial", "Helvetica", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #000000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn:hover:not(.btn-paginator-current),
+.btn:active:not(.btn-paginator-current) {
+  background-color: #663d15;
+}
+
+.btn-filter {
+  padding: 15px 33px;
 }
 
 .products {
@@ -70,40 +273,115 @@ main.container {
 .products-card {
   float: left;
   width: 220px;
-  min-height: 285px;
   margin-right: 20px;
   margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
 }
 
 .products-card:nth-child(3n) {
   margin-right: 0;
 }
 
+.products-card img {
+  width: 220px;
+  height: 165px;
+  margin-bottom: 5px;
+}
+
+.products-card .products-item-title {
+  margin: 0 16px 15px;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: none;
+}
+
+.products-item a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.products-manufacturer {
+  display: block;
+  text-transform: uppercase;
+}
+
+.products-card .products-panel {
+  margin: 0 16px 16px;
+}
+
+.products-panel .price,
+.products-panel .btn-buy {
+  display: inline-block;
+  height: 43px;
+  margin-right: -4px;
+  padding: 0 10px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 43px;
+}
+
+.products-panel .price {
+  min-width: 89px;
+  background-color: #e5e5e5;
+}
+
+.products-panel .btn-buy {
+  min-width: 58px;
+}
+
 .catalog-paginator {
   float: left;
   width: 700px;
-  min-height: 40px;
   margin-top: 25px;
 }
 
+.catalog-paginator .btn {
+  display: inline-block;
+  min-width: 20px;
+  height: 40px;
+  margin-right: 3px;
+  padding: 0 10px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+}
+
+.btn-paginator-current {
+  color: #000000;
+  background-color: #ffffff;
+}
+
 /******* КАРТОЧКА ТОВАРА *******/
+
 .catalog-item-left {
   float: left;
   width: 460px;
-  min-height: 670px;
 }
 
 .active-gallery-item {
   width: 460px;
-  min-height: 498px;
+  height: 498px;
   margin-bottom: 20px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.active-gallery-item img {
+  width: 460px;
+  height: 498px;
 }
 
 .gallery a {
   float: left;
   width: 140px;
-  min-height: 149px;
+  height: 149px;
   margin-right: 20px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.gallery img {
+  width: 140px;
+  height: 149px;
 }
 
 .gallery a:last-child {
@@ -113,118 +391,142 @@ main.container {
 .catalog-item-right {
   float: right;
   width: 390px;
-  min-height: 640px;
-  padding-top: 30px;
+  padding-top: 21px;
 }
 
 .description {
-  min-height: 270px;
+  max-width: 385px;
   margin-bottom: 70px;
 }
 
-/*.description-header {
-  min-height: 15px;
+.description-header {
   margin-bottom: 35px;
 }
 
 .product-status {
   float: left;
-  width: 170px;
 }
 
 .vendor-code {
   float: right;
-  width: 160px;
+  color: #aeaeae;
 }
 
 .description p {
-
+  margin-bottom: 28px;
 }
 
-.products-panel {
-  width: 187px;
-  min-height: 45px;
-}*/
-
-.consist {
-  min-height: 170px;
+.catalog-item .products-panel {
+  max-width: 187px;
 }
+
+.list-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-items li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.list-items li::before {
+  left: 0;
+}
+
+/***************************** ФУТЕР *****************************/
 
 .main-footer {
   margin-top: 45px;
   padding-top: 60px;
   padding-bottom: 40px;
+  color: #ffffff;
+  background: #252525 url("../img/bg-footer.png") repeat 0 0
 }
 
 .footer-contacts {
   float: left;
   width: 320px;
   margin-right: 60px;
-  min-height: 90px;
+}
+
+.footer-contacts a {
+  color: #ffffff;
+}
+
+.footer-contacts a:last-child,
+.footer-contacts a:hover {
+  text-decoration: none;
 }
 
 .footer-social {
   float: left;
   width: 180px;
-  min-height: 90px;
+  text-align: center;
+}
+
+.footer-social p {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.socials .btn {
+  display: inline-block;
+  width: 43px;
+  height: 43px;
+  margin: 0 2px;
+  font-size: 0;
+  vertical-align: top;
+  text-decoration: none;
+  background: #000000 url("../img/sprite.png") no-repeat;
+}
+
+.socials .btn:hover {
+  background-color: #ffffff;
+}
+
+.socials .btn-social-vk {
+  background-position: 9px -447px;
+}
+
+.socials .btn-social-fb {
+  background-position: 15px -171px;
+}
+
+.socials .btn-social-inst {
+   background-position: 12px -313px;
+}
+
+.socials .btn-social-vk:hover {
+  background-position: 9px -381px;
+}
+
+.socials .btn-social-fb:hover {
+  background-position: 15px -100px;
+}
+
+.socials .btn-social-inst:hover {
+  background-position: 12px -242px;
 }
 
 .footer-copyright {
   float: right;
-  width: 180px;
-  min-height: 90px;
+  max-width: 180px;
 }
 
-/***************************** СЕТКИ *****************************/
-
-/*********** ВСПОМОГАТЕЛЬНЫЕ СТИЛИ ДЛЯ ПОДСВЕТКИ БЛОКОВ **********/
-body > * {
-  background: rgba(0, 128, 0, 0.2);
-  box-shadow: 0 0 0 3px green;
+.footer-copyright p {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-body > * > * {
-  background: rgba(255, 45, 82, 0.2);
-  box-shadow: 0 0 0 3px rgb(255, 45, 82);
+.footer-copyright .btn {
+  margin-right: 0;
+  padding: 15px 22px;
 }
 
-body > * > * > * {
-  background: rgba(234, 255, 45, 0.2);
-  box-shadow: inset 0 0 0 2px rgb(234, 255, 45);
-
+.footer-copyright .btn:hover {
+  color: #000000;
+  background-color: #ffffff;
 }
-
-body > * > * > * > * {
-  background: rgba(12, 84, 200, 0.2);
-  box-shadow: inset 0 0 0 2px rgb(12, 84, 200);
-
-}
-
-/*********** ВСПОМОГАТЕЛЬНЫЕ СТИЛИ ДЛЯ ПОДСВЕТКИ БЛОКОВ **********/
-
-/***************************** ЗАГОЛОВКИ *****************************/
-
-.index-content-title,
-.page-title {
-  font-size: 30px;
-  line-height: 42px;
-  text-transform: uppercase;
-}
-
-.filters-title,
-.list-title {
-  font-size: 24px;
-  line-height: 30px;
-  text-transform: uppercase;
-}
-
-.products-item-title {
-  font-size: 14px;
-  line-height: 18px;
-}
-
-.products-item-title .products-manufacturer {
-  text-transform: uppercase;
-}
-
-/***************************** ЗАГОЛОВКИ *****************************/
