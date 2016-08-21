@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Средства для ухода - Барбершоп «Бородинский»</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=cyrillic" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
       <div class="container clearfix">
-        <nav class="main-navigation">
-          <a href="#"><img src="img/logo.png" width="206" height="35" alt="Барбершоп"></a>
+        <nav class="main-navigation clearfix">
+          <a href="#"><img src="img/logo.png" width="111" height="24" alt="Барбершоп"></a>
           <a href="#">Информация</a>
           <a href="#">Новости</a>
           <a href="#">Прайс-лист</a>
@@ -32,62 +33,44 @@
       <div class="catalog clearfix">
         <div class="catalog-filters">
           <form action="#" method="post">
-            <div class="manufacturers">
+            <div class="filters-item manufacturers">
               <h2 class="filters-title">Производители:</h2>
-              <label>
-                <input type="checkbox" name="baxter-of-california" checked>
-                Baxter of California
-              </label>
-              <label>
-                <input type="checkbox" name="mr-natty">
-                Mr Natty
-              </label>
-              <label>
-                <input type="checkbox" name="suavecito" checked>
-                Suavecito
-              </label>
-              <label>
-                <input type="checkbox" name="malin-goetz">
-                Malin-Goetz
-              </label>
-              <label>
-                <input type="checkbox" name="murrays">
-                Murray's
-              </label>
-              <label>
-                <input type="checkbox" name="american-crew" checked>
-                American crew
-              </label>
+              <input type="checkbox" name="baxter-of-california" id="mf-cb1" checked>
+              <label for="mf-cb1">Baxter of California</label>
+              <input type="checkbox" name="mr-natty" id="mf-cb2">
+              <label for="mf-cb2">Mr Natty</label>
+              <input type="checkbox" name="suavecito" id="mf-cb3" checked>
+              <label for="mf-cb3">Suavecito</label>
+              <input type="checkbox" name="malin-goetz" id="mf-cb4">
+              <label for="mf-cb4">Malin-Goetz</label>
+              <input type="checkbox" name="murrays" id="mf-cb5">
+              <label for="mf-cb5">Murray's</label>
+              <input type="checkbox" name="american-crew" id="mf-cb6" checked>
+              <label for="mf-cb6">American crew</label>
             </div>
-            <div class="products-groups">
+            <div class="filters-item products-groups">
               <h2 class="filters-title">Группы товаров:</h2>
-              <label>
-                <input type="radio" name="products-groups-item" value="shaving accessories">
-                Бритвенные принадлежности
-              </label>
-              <label>
-                <input type="radio" name="products-groups-item" value="preparations for the care" checked>
-                Средства для ухода
-              </label>
-              <label>
-                <input type="radio" name="products-groups-item" value="accessories">
-                Аксессуары
-              </label>
+              <input type="radio" name="products-groups-item" id="pg-rb1" value="shaving accessories">
+              <label for="pg-rb1"> Бритвенные принадлежности</label>
+              <input type="radio" name="products-groups-item" id="pg-rb2" value="preparations for the care" checked>
+              <label for="pg-rb2">Средства для ухода</label>
+              <input type="radio" name="products-groups-item" id="pg-rb3" value="accessories">
+              <label for="pg-rb3">Аксессуары</label>
             </div>
-            <button type="submit" class="btn filter-btn">Показать</button>
+            <button type="submit" class="btn btn-filter">Показать</button>
           </form>
         </div>
-        <section class="products">
+        <section class="products clearfix">
           <article class="products-card">
             <div class="products-item">
-              <a href="#"><img src="img/product-1.jpg" width="220" height="165" alt="Набор для путешествий &laquo;Baxter of California&raquo;"></a>
+              <a href="catalog-item.html"><img src="img/product-1.jpg" width="220" height="165" alt="Набор для путешествий &laquo;Baxter of California&raquo;"></a>
               <h2 class="products-item-title">
-                <a href="#">Набор для путешествий<span class="products-manufacturer">&laquo;Baxter of California&raquo;</span></a>
+                <a href="catalog-item.html">Набор для путешествий<span class="products-manufacturer">&laquo;Baxter of California&raquo;</span></a>
               </h2>
             </div>
             <div class="products-panel">
-                <span class="price">2900 руб.</span>
-                <a class="btn btn-buy" href="#">Купить</a>
+                <span class="price">2 900 руб.</span>
+                <a class="btn btn-buy" href="catalog-item.html">Купить</a>
             </div>
           </article>
           <article class="products-card">
@@ -146,15 +129,15 @@
                 </h2>
               </div>
               <div class="products-panel">
-                  <span class="price">3900 руб.</span>
+                  <span class="price">3 900 руб.</span>
                   <a class="btn btn-buy" href="#">Купить</a>
               </div>
           </article>
           <div class="catalog-paginator">
-            <a class="btn btn-paginator" href="#">1</a>
-            <span class="btn btn-paginator-active">2</span>
-            <a class="btn btn-paginator" href="#">3</a>
-            <a class="btn btn-paginator" href="#">4</a>
+            <a class="btn" href="#">1</a>
+            <span class="btn btn-paginator-current">2</span>
+            <a class="btn" href="#">3</a>
+            <a class="btn" href="#">4</a>
           </div>
         </section>
       </div>
@@ -165,7 +148,7 @@
           Барбершоп «Бородинский»<br>
           Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8<br>
           <a href="#">Как нас найти?</a><br>
-            Телефон: <a href="tel:+78126660266">+7 (812) 666-02-66</a>
+          Телефон: <a href="tel:+78126660266">+7 (812) 666-02-66</a>
         </section>
         <section class="footer-social">
           <p>Давайте дружить!</p>
