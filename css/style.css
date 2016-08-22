@@ -7,8 +7,13 @@
   font-family: "PT Sans Narrow", "Arial", "Helvetica", sans-serif;
   font-weight: bold;
   color: #000000;
-  background: #ffffff url("../img/bg-main.png") repeat 0 0;
+  background: #ffffff url("../img/bg-main.png") repeat;
   text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .clearfix::after {
@@ -33,11 +38,16 @@
 
 .main-navigation {
   float: left;
+  max-width: 780px;
 }
 
-.main-navigation img {
+.main-navigation .logo-inner img {
   width: 111px;
   height: 24px;
+}
+
+.main-navigation .logo-inner {
+  padding: 20px;
 }
 
 .main-navigation a {
@@ -49,16 +59,17 @@
   text-decoration: none;
 }
 
-.main-navigation a:first-child {
-  padding: 20px;
+.main-navigation a:hover {
+  background: #242424;
 }
 
-.main-navigation a:nth-child(n+2):hover {
-  background: #242424;
+.main-navigation .logo-inner:hover {
+  background: none;
 }
 
 .main-navigation .active-page {
   position: relative;
+  background-color: none;
 }
 
 .main-navigation .active-page::after {
@@ -66,9 +77,13 @@
   position: absolute;
   left: 20px;
   bottom: 0;
-  width: 56px;
-  height: 4px;
+  right: 20px;
+  height: 5px;
   background-color: #ffffff;
+}
+
+.main-navigation .active-page:hover {
+  background: none;
 }
 
 .user-block {
@@ -109,7 +124,9 @@
 /***************************** КОНТЕНТ *****************************/
 
 .page-title {
+  margin: 0;
   margin-bottom: 15px;
+  padding: 0;
   font-size: 30px;
   line-height: 42px;
 }
@@ -122,10 +139,16 @@
   position:relative;
   margin-right: 17px;
   padding-right: 28px;
-  font-size: 14px;
-  line-height: 20px;
   color: #000000;
   text-decoration: none;
+}
+
+.breadcrumbs .breadcrumbs-active {
+  color: #aba9a7;
+}
+
+.breadcrumbs a:not(.breadcrumbs-active):hover {
+  text-decoration: underline;
 }
 
 .breadcrumbs a::after,
@@ -139,11 +162,10 @@
   margin-top: -4px;
   transform: rotate(45deg);
   background-color: #000000;
-  box-shadow: inset 0 0 1px 1px #636260;
 }
 
-.breadcrumbs .breadcrumbs-active {
-  color: #aba9a7;
+.breadcrumbs .breadcrumbs-active::after {
+  display: none;
 }
 
 /******* КАТАЛОГ ТОВАРОВ *******/
@@ -154,7 +176,6 @@
 }
 
 .catalog-filters {
-  outline: 1px solid violet;
   float: left;
   margin: 0;
   padding: 0;
@@ -162,12 +183,12 @@
 }
 
 .filters-item {
-  outline: 1px solid pink;
-  margin-bottom: 33px;
+  margin-bottom: 53px;
 }
 
 .filters-title,
 .list-title {
+  margin-top: 0;
   margin-bottom: 30px;
   font-size: 24px;
   line-height: 30px;
@@ -281,7 +302,7 @@ input[type="radio"]:disabled + label::after {
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
 }
 
-.products-card:nth-child(3n) {
+.products-card:nth-child(3n+3) {
   margin-right: 0;
 }
 
@@ -398,7 +419,7 @@ input[type="radio"]:disabled + label::after {
 
 .description {
   max-width: 385px;
-  margin-bottom: 70px;
+  margin-bottom: 65px;
 }
 
 .description-header {
@@ -444,7 +465,8 @@ input[type="radio"]:disabled + label::after {
   padding-top: 60px;
   padding-bottom: 40px;
   color: #ffffff;
-  background: #252525 url("../img/bg-footer.png") repeat 0 0
+  background: #252525 url("../img/bg-footer.png") repeat;
+  box-shadow: inset 0 10px 30px 0 #000000;
 }
 
 .footer-contacts {
