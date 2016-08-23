@@ -31,7 +31,6 @@ img {
 /***************************** ХЕДЕР *****************************/
 
 .main-header {
-  margin-bottom: 52px;
   color: #ffffff;
   background-color: #000000;
 }
@@ -88,12 +87,12 @@ img {
 
 .user-block {
   float: right;
-  max-width: 140px;
+  max-width: 170px;
 }
 
 .login {
   position: relative;
-  display: block;
+  float: right;
   padding: 25px 20px;
   padding-left: 50px;
   font-size: 16px;
@@ -123,6 +122,10 @@ img {
 
 /***************************** КОНТЕНТ *****************************/
 
+main.container {
+  margin-top: 52px;
+}
+
 .page-title {
   margin: 0;
   margin-bottom: 15px;
@@ -137,13 +140,13 @@ img {
 
 .breadcrumbs a {
   position:relative;
-  margin-right: 17px;
-  padding-right: 28px;
+  margin-right: 45px;
   color: #000000;
   text-decoration: none;
 }
 
 .breadcrumbs .breadcrumbs-active {
+  margin-right: 0;
   color: #aba9a7;
 }
 
@@ -151,17 +154,17 @@ img {
   text-decoration: underline;
 }
 
-.breadcrumbs a::after,
-.list-items li::before {
+.breadcrumbs a::after {
   content: "";
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -28px;
   width: 8px;
   height: 8px;
   margin-top: -4px;
   transform: rotate(45deg);
   background-color: #000000;
+  pointer-events: none;
 }
 
 .breadcrumbs .breadcrumbs-active::after {
@@ -203,7 +206,6 @@ input[type="checkbox"] + label,
 input[type="radio"] + label {
   position: relative;
   display: block;
-  max-width: 130px;
   margin-bottom: 17px;
   padding-left: 45px;
   font-size: 14px;
@@ -261,15 +263,20 @@ input[type="checkbox"]:disabled + label::after,
 input[type="radio"]:disabled + label,
 input[type="radio"]:disabled + label::before,
 input[type="radio"]:disabled + label::after {
-  opacity: 0.3;
+  color: #aba9a7;
   cursor: default;
 }
 
 .btn {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-right: -4px;
+  height: 43px;
   font-size: 14px;
   line-height: 18px;
   font-family: "PT Sans Narrow", "Arial", "Helvetica", sans-serif;
   font-weight: bold;
+  vertical-align: top;
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
@@ -285,7 +292,7 @@ input[type="radio"]:disabled + label::after {
 }
 
 .btn-filter {
-  padding: 15px 33px;
+  padding: 13px 33px;
 }
 
 .products {
@@ -295,11 +302,16 @@ input[type="radio"]:disabled + label::after {
 
 .products-card {
   float: left;
-  width: 220px;
+  width: 188px;
   margin-right: 20px;
   margin-bottom: 20px;
+  padding: 0 16px;
   background-color: #ffffff;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.products-card:hover {
+  box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.3);
 }
 
 .products-card:nth-child(3n+3) {
@@ -309,11 +321,12 @@ input[type="radio"]:disabled + label::after {
 .products-card img {
   width: 220px;
   height: 165px;
+  margin: 0 -16px;
   margin-bottom: 5px;
 }
 
 .products-card .products-item-title {
-  margin: 0 16px 15px;
+  margin-bottom: 15px;
   font-size: 14px;
   line-height: 18px;
   text-transform: none;
@@ -330,27 +343,23 @@ input[type="radio"]:disabled + label::after {
 }
 
 .products-card .products-panel {
-  margin: 0 16px 16px;
+  margin-bottom: 16px;
 }
 
-.products-panel .price,
-.products-panel .btn-buy {
+.products-panel .price {
   display: inline-block;
-  height: 43px;
+  min-width: 89px;
   margin-right: -4px;
   padding: 0 10px;
   text-align: center;
   vertical-align: middle;
   line-height: 43px;
-}
-
-.products-panel .price {
-  min-width: 89px;
   background-color: #e5e5e5;
 }
 
 .products-panel .btn-buy {
-  min-width: 58px;
+  min-width: 79px;
+  padding: 13px 19px;
 }
 
 .catalog-paginator {
@@ -361,8 +370,8 @@ input[type="radio"]:disabled + label::after {
 
 .catalog-paginator .btn {
   display: inline-block;
-  min-width: 20px;
-  height: 40px;
+  box-sizing: border-box;
+  min-width: 43px;
   margin-right: 3px;
   padding: 0 10px;
   text-align: center;
@@ -373,6 +382,7 @@ input[type="radio"]:disabled + label::after {
 .btn-paginator-current {
   color: #000000;
   background-color: #ffffff;
+  cursor: default;
 }
 
 /******* КАРТОЧКА ТОВАРА *******/
@@ -439,10 +449,6 @@ input[type="radio"]:disabled + label::after {
   margin-bottom: 28px;
 }
 
-.catalog-item .products-panel {
-  max-width: 187px;
-}
-
 .list-items {
   margin: 0;
   padding: 0;
@@ -452,6 +458,18 @@ input[type="radio"]:disabled + label::after {
 .list-items li {
   position: relative;
   padding-left: 20px;
+}
+
+.list-items li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  transform: rotate(45deg);
+  background-color: #000000;
 }
 
 .list-items li::before {
@@ -484,6 +502,10 @@ input[type="radio"]:disabled + label::after {
   text-decoration: none;
 }
 
+.footer-contacts .phone:hover {
+  cursor: default;
+}
+
 .footer-social {
   float: left;
   width: 180px;
@@ -498,7 +520,6 @@ input[type="radio"]:disabled + label::after {
 .socials .btn {
   display: inline-block;
   width: 43px;
-  height: 43px;
   margin: 0 2px;
   font-size: 0;
   vertical-align: top;
@@ -547,7 +568,7 @@ input[type="radio"]:disabled + label::after {
 
 .footer-copyright .btn {
   margin-right: 0;
-  padding: 15px 22px;
+  padding: 13px 22px;
 }
 
 .footer-copyright .btn:hover {
