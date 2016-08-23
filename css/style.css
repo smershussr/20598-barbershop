@@ -46,12 +46,12 @@ img {
 }
 
 .main-navigation .logo-inner {
-  padding: 20px;
+  padding: 23px 20px 21px 21px;
 }
 
 .main-navigation a {
   float: left;
-  padding: 25px 20px;
+  padding: 25px 20px 27px;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
@@ -77,7 +77,7 @@ img {
   left: 20px;
   bottom: 0;
   right: 20px;
-  height: 5px;
+  height: 4px;
   background-color: #ffffff;
 }
 
@@ -93,8 +93,7 @@ img {
 .login {
   position: relative;
   float: right;
-  padding: 25px 20px;
-  padding-left: 50px;
+  padding: 25px 20px 20px 50px;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
@@ -109,7 +108,7 @@ img {
   content: "";
   position: absolute;
   top: 28px;
-  left: 20px;
+  left: 19px;
   width: 18px;
   height: 18px;
   background: transparent url("../img/sprite.png") no-repeat -1px -15px;
@@ -123,7 +122,7 @@ img {
 /***************************** КОНТЕНТ *****************************/
 
 main.container {
-  margin-top: 52px;
+  margin-top: 49px;
 }
 
 .page-title {
@@ -135,12 +134,12 @@ main.container {
 }
 
 .breadcrumbs {
-  margin-bottom: 58px;
+  margin-bottom: 48px;
 }
 
 .breadcrumbs a {
   position:relative;
-  margin-right: 45px;
+  margin-right: 40px;
   color: #000000;
   text-decoration: none;
 }
@@ -158,7 +157,7 @@ main.container {
   content: "";
   position: absolute;
   top: 50%;
-  right: -28px;
+  right: -26px;
   width: 8px;
   height: 8px;
   margin-top: -4px;
@@ -175,7 +174,7 @@ main.container {
 
 .catalog,
 .catalog-item {
-  margin-bottom: 45px;
+  margin-bottom: 43px;
 }
 
 .catalog-filters {
@@ -186,19 +185,26 @@ main.container {
 }
 
 .filters-item {
-  margin-bottom: 53px;
+  margin-bottom: 51px;
 }
 
-.filters-title,
-.list-title {
+.filters-title {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 27px;
   font-size: 24px;
   line-height: 30px;
 }
 
+.products-groups .filters-title {
+  margin-bottom: 28px;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
+  margin: 0
+  padding: 0
+  border:none;
+  outline: none;
   display: none;
 }
 
@@ -206,7 +212,7 @@ input[type="checkbox"] + label,
 input[type="radio"] + label {
   position: relative;
   display: block;
-  margin-bottom: 17px;
+  margin-bottom: 19px;
   padding-left: 45px;
   font-size: 14px;
   line-height: 18px;
@@ -218,7 +224,7 @@ input[type="radio"] + label::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: 1px;
   width: 16px;
   height: 16px;
   border: 2px solid #000000;
@@ -229,7 +235,7 @@ input[type="checkbox"]:checked + label::after {
   content: "";
   position: absolute;
   top: 4px;
-  left: 4px;
+  left: 5px;
   width: 12px;
   height: 12px;
   background: transparent url("../img/sprite.png") no-repeat 0 -59px;
@@ -243,7 +249,7 @@ input[type="radio"]:checked + label::after {
   content: "";
   position: absolute;
   top: 6px;
-  left: 6px;
+  left: 7px;
   width: 8px;
   height: 8px;
   background-color: #000000;
@@ -292,12 +298,15 @@ input[type="radio"]:disabled + label::after {
 }
 
 .btn-filter {
-  padding: 13px 33px;
+  margin-top: 1px;
+  margin-left: 1px;
+  padding: 13px 29px;
 }
 
 .products {
   float: right;
   width: 700px;
+  padding-top: 5px;
 }
 
 .products-card {
@@ -326,7 +335,9 @@ input[type="radio"]:disabled + label::after {
 }
 
 .products-card .products-item-title {
-  margin-bottom: 15px;
+  margin: 0;
+  margin-bottom: 14px;
+  padding: 0;
   font-size: 14px;
   line-height: 18px;
   text-transform: none;
@@ -343,12 +354,12 @@ input[type="radio"]:disabled + label::after {
 }
 
 .products-card .products-panel {
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 .products-panel .price {
   display: inline-block;
-  min-width: 89px;
+  min-width: 92px;
   margin-right: -4px;
   padding: 0 10px;
   text-align: center;
@@ -358,21 +369,21 @@ input[type="radio"]:disabled + label::after {
 }
 
 .products-panel .btn-buy {
-  min-width: 79px;
-  padding: 13px 19px;
+  min-width: 78px;
+  padding: 12px 18px;
 }
 
 .catalog-paginator {
   float: left;
   width: 700px;
-  margin-top: 25px;
+  margin-top: 27px;
 }
 
 .catalog-paginator .btn {
   display: inline-block;
   box-sizing: border-box;
   min-width: 43px;
-  margin-right: 3px;
+  margin-right: 5px;
   padding: 0 10px;
   text-align: center;
   vertical-align: middle;
@@ -386,6 +397,10 @@ input[type="radio"]:disabled + label::after {
 }
 
 /******* КАРТОЧКА ТОВАРА *******/
+
+.catalog-item-inner .breadcrumbs {
+  margin-bottom: 55px;
+}
 
 .catalog-item-left {
   float: left;
@@ -424,16 +439,16 @@ input[type="radio"]:disabled + label::after {
 .catalog-item-right {
   float: right;
   width: 390px;
-  padding-top: 21px;
+  padding-top: 20px;
 }
 
 .description {
   max-width: 385px;
-  margin-bottom: 65px;
+  margin-bottom: 63px;
 }
 
 .description-header {
-  margin-bottom: 35px;
+  margin-bottom: 29px;
 }
 
 .product-status {
@@ -446,12 +461,21 @@ input[type="radio"]:disabled + label::after {
 }
 
 .description p {
-  margin-bottom: 28px;
+  margin-bottom: 35px;
+}
+
+.list-title {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .list-items {
   margin: 0;
   padding: 0;
+  padding-left: 3px;
   list-style: none;
 }
 
@@ -479,9 +503,9 @@ input[type="radio"]:disabled + label::after {
 /***************************** ФУТЕР *****************************/
 
 .main-footer {
-  margin-top: 45px;
-  padding-top: 60px;
-  padding-bottom: 40px;
+  margin-top: 49px;
+  padding-top: 57px;
+  padding-bottom: 36px;
   color: #ffffff;
   background: #252525 url("../img/bg-footer.png") repeat;
   box-shadow: inset 0 10px 30px 0 #000000;
@@ -490,7 +514,7 @@ input[type="radio"]:disabled + label::after {
 .footer-contacts {
   float: left;
   width: 320px;
-  margin-right: 60px;
+  margin-right: 62px;
 }
 
 .footer-contacts a {
